@@ -1,7 +1,7 @@
 # RoR - Base Travis-CI Configuration for this project
 language: ruby
 rvm:
-  - 2.4.0
+  - 2.3.0
 
 env:
   global:
