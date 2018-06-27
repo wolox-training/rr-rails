@@ -1,0 +1,5 @@
+# Rubocop project configuration
+Documentation:
+  Enabled: false
+LineLength:
+  Max: 99 
