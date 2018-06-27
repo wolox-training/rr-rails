@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Add Rubocop for code verification
 gem 'rubocop', require: false
 
+# Linter for scss
+gem 'scss_lint', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
