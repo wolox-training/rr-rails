@@ -1,7 +1,17 @@
-# README
+# Ramiro Rojo's RoR Training
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/wolox-training/rr-rails.svg?branch=master)](https://travis-ci.org/wolox-training/rr-rails)
+
+# Ruby Version
+
+2.3
+
+# Dependencies
+
+- PostgreSQL
+- Rails
+- Rubocop
+
 
 Things you may want to cover:
 
