@@ -78,6 +78,8 @@ group :test do
   # Extra validation methods
   gem 'shoulda'
   gem 'shoulda-matchers', '~> 3.1'
+  # Required for Travis-CI
+  gem 'test-unit'
 end
 
 # Adding rspec for Travis-CI testing
