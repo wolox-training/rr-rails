@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Book do
-
   subject(:book) do
     described_class.new(
       genre: genre, author: author, title: title, publisher: publisher,
