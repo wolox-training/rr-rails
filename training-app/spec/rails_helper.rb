@@ -14,6 +14,12 @@ require 'support/factory_bot'
 # FactoryBot is not loading it for a strange reason
 require 'factories/book_factory'
 
+# Helpers
+require 'support/auth_helpers'
+
+# Shared context used by tests
+require 'support/shared_contexts'
+
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -68,6 +74,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Helpers
+  config.include Requests::AuthHelpers::Includables, type: :request
+  config.extend Requests::AuthHelpers::Extensions, type: :request
 
   # Clean up database
   config.before(:suite) do
