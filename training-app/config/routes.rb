@@ -1,8 +1,15 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
+  # User authentication
   mount_devise_token_auth_for 'User', at: 'auth'
-  # devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Index page as recommended by Devise
   root to: 'home#index'
-  # Add only index and show routes
-  resources :books, only: %I[index show]
+  # API entries are inside a namespace
+  namespace :api do
+    # First (and only) version of the API
+    namespace :v1 do
+      resources :books, only: %I[index show]
+    end
+  end
 end
