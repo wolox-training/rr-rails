@@ -2,18 +2,8 @@ require 'rails_helper'
 
 describe Book do
   subject(:book) do
-    described_class.new(
-      genre: genre, author: author, title: title, publisher: publisher,
-      year: year, image: image
-    )
+    create(:book)
   end
-
-  let(:genre)  { Faker::Book.genre }
-  let(:author) { Faker::Book.author }
-  let(:title)  { Faker::Book.title }
-  let(:publisher) { Faker::Book.publisher }
-  let(:year) { Faker::Number.between(1440, Date.current.year).to_s }
-  let(:image) { Faker::Avatar.image }
 
   it 'has an author' do
     is_expected.to validate_presence_of(:author)
@@ -40,44 +30,38 @@ describe Book do
 
   describe '#create' do
     context 'when genre is nil' do
-      let(:genre) { nil }
-
       it do
+        book.genre = nil
         is_expected.to be_invalid
       end
     end
     context 'when author is nil' do
-      let(:author) { nil }
-
       it do
+        book.author = nil
         is_expected.to be_invalid
       end
     end
     context 'when title is nil' do
-      let(:title) { nil }
-
       it do
+        book.title = nil
         is_expected.to be_invalid
       end
     end
     context 'when publisher is nil' do
-      let(:publisher) { nil }
-
       it do
+        book.publisher = nil
         is_expected.to be_invalid
       end
     end
     context 'when year is nil' do
-      let(:year) { nil }
-
       it do
+        book.year = nil
         is_expected.to be_invalid
       end
     end
     context 'when image is nil' do
-      let(:image) { nil }
-
       it do
+        book.image = nil
         is_expected.to be_invalid
       end
     end
