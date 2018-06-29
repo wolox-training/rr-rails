@@ -1,0 +1,5 @@
+scss_files: 'app/assets/stylesheets/**/*.css.scss'
+
+linters:
+  Comment:
+    enabled: false
