@@ -18,7 +18,6 @@ before_install:
   - gem update --system
 
 before_script:
-  - cd training-app
   - bundle install
   - psql -c "CREATE USER \"wbooks-api\" WITH PASSWORD 'wbooks-api';" -U postgres
   - psql -c "DROP DATABASE IF EXISTS \"training-app_test\";" -U postgres
