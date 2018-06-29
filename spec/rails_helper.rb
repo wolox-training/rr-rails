@@ -12,6 +12,7 @@ require 'rspec/rails'
 require 'support/factory_bot'
 
 # FactoryBot is not loading it for a strange reason
+require 'factories/user_factory'
 require 'factories/book_factory'
 
 # Helpers
@@ -76,8 +77,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Helpers
-  config.include Requests::AuthHelpers::Includables, type: :request
-  config.extend Requests::AuthHelpers::Extensions, type: :request
+  config.include Requests::AuthHelpers::Includables
+  config.extend Requests::AuthHelpers::Extensions
 
   # Clean up database
   config.before(:suite) do
