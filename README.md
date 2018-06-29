@@ -1,7 +1,3 @@
-# rr-rails
+# WBooks
 
 My training
-
-## First test
-
-Testing a not really messy branch.

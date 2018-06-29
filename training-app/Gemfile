@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Add Rubocop for code verification
 gem 'rubocop', '~> 0.52.1', require: false
 
+
 # Linter for scss
 gem 'scss_lint', require: false
 
