@@ -70,6 +70,8 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   # Required for Travis-CI
   gem 'test-unit'
+  # Rubocop for testing
+  gem 'rubocop-rspec'
 end
 
 # Adding rspec for Travis-CI testing
