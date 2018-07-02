@@ -1,7 +1,11 @@
 # Rubocop project configuration
+require: rubocop-rspec
+
 Documentation:
   Enabled: false
 LineLength:
-  Max: 99 
+  Max: 99
 Style/FrozenStringLiteralComment:
   Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
