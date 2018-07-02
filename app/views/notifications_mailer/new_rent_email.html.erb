@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      html, body { 
+        font-family: sans-serif; 
+        min-height: 100%;
+        background: rebeccapurple; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+      .book-card {
+        color: black;
+        padding: 0.5em;
+        margin: 0.5em;
+        border-radius: 0.3em;
+        background: white;
+        box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      .book-card > img {
+        width: 100%;
+        max-width: 10em;
+        margin: auto;
+      }
+      footer {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WBooks</h1>
+      <p>This is a rent notification from WBooks.</p>
+      <p>A new rent was registered for the following book:</p>
+    </header>
+    <section>
+      <content>
+        <div class="book-card">
+          <img src="<%= @book.image %>" alt="Cover for <%= @book.name %>" >
+          <div class="center">
+            <h2><%= @book.title %></h2>
+            <div><%= @book.author %></div>
+            <div><%= @book.genre %></div>
+            <div>Published by <%= @book.publisher %> in <%= @book.year  %> </div>
+          </div>
+        </div>
+        <p>The rent was registered at <%= @rent.created_at.strftime('%m/%d/%Y %H:%M') %>.</p>
+        <p>The rent starts from <%= @rent.from.strftime('%m/%d/%Y') %> until <%= @rent.to.strftime('%m/%d/%Y') %>.</p>
+        <p>Thanks for using WBooks. Enjoy your reading!</p>
+        <footer>
+          <p>Please, do not reply to this email.</p>
+        </footer>
+      </content>
+    </section>
+  </body>
+</html>
