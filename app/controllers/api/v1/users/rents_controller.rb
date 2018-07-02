@@ -7,7 +7,7 @@ module Api
         include Wor::Paginate
 
         def index
-          render_paginated Rent.where(user_id: params.user_id)
+          render_paginated Rent.where(user_id: params[:user_id])
         end
 
         def create
