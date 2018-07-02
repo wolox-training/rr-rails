@@ -337,8 +337,6 @@ DEPENDENCIES
   shoulda
   shoulda-matchers (~> 3.1)
   sidekiq
-  slim
-  sidekiq_mailer
   spring
   spring-watcher-listen (~> 2.0.0)
   test-unit
