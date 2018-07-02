@@ -337,11 +337,8 @@ DEPENDENCIES
   shoulda
   shoulda-matchers (~> 3.1)
   sidekiq
-<<<<<<< 167781a62e68ce7dce3a8bf16fee1aee7b354134
   slim
-=======
   sidekiq_mailer
->>>>>>> added sidekiq_mailer gem instead of writting 200 lines of code
   spring
   spring-watcher-listen (~> 2.0.0)
   test-unit
