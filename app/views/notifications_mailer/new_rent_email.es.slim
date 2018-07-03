@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta charset='UTF-8'
+    style 
+      |
+        html, body { 
+          font-family: sans-serif; 
+          min-height: 100%;
+          background: rebeccapurple; 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-align: center;
+        }
+        .book-card {
+          color: black;
+          padding: 0.5em;
+          margin: 0.5em;
+          border-radius: 0.3em;
+          background: white;
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        .book-card > img {
+          width: 100%;
+          max-width: 10em;
+          margin: auto;
+        }
+        footer {
+          margin-top: 1em;
+        }      
+  body
+    header
+      h1 | WBooks
+      p | Esta es una notificación de WBooks.
+      p | Un nuevo alquiler ha sido registrado para el siguiente libro
+    section
+      content
+        div class='book-card'
+          img src="#{@book.image}"  alt="Cover for #{@book.title}"
+          div class='center'
+            h2 = @book.title
+            p = @book.author
+            p = @book.genre
+            p | Publicado por #{@book.publisher} en #{@book.year}.
+        p | Se ha registrado el alquiler el #{@rent.created_at.strftime('%d/%m/%Y %H:%M')}
+        p | Desde el #{@rent.from.strftime('%d/%m/%Y')} hasta el #{@rent.to.strftime('%d/%m/%Y')}.
+        p | Gracias por utilizar WBooks. ¡Disfrute su lectura!
+    footer
+      p | Por favor, no responda a este correo.
