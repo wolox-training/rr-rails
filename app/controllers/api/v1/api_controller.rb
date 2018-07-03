@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ApiController < ApplicationController
+    class ApiController < DeviseTokenAuthController
       # All API controllers require to have the user authenticated
       before_action :authenticate_user!
       # We set the current locale for our user
