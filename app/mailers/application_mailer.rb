@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: RAILS.application.secrets.mailer_address
+  default from: Rails.application.secrets.mailer_address
   layout 'mailer'
 end
