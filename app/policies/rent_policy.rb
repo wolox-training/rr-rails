@@ -1,0 +1,2 @@
+class RentPolicy < ApiPolicy
+end
