@@ -1,5 +1,8 @@
 {
   "name": "training-app",
   "private": true,
+  "scripts": {
+    "start": "rails server"
+  },
   "dependencies": {}
 }
