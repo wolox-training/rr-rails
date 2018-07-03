@@ -17,12 +17,12 @@ module WBooks
     # the framework and any gems in your application.
     config.active_job.queue_adapter = :sidekiq
     config.action_mailer.smtp_settings = {
-      domain: ENV['MAILER_DOMAIN'],
-      username: ENV['MAILER_USERNAME'],
-      password: ENV['MAILER_PASSWORD'],
-      address: ENV['MAILER_ADDRESS'],
-      port: ENV['MAILER_PORT'],
-      authentication: ENV['MAILER_AUTH']
+      domain: Rails.secrets.mailer_domain,
+      username: Rails.secrets.mailer_user,
+      password: Rails.secrets.mailer_password,
+      address: Rails.secrets.mailer_address,
+      port: Rails.secrets.mailer_port,
+      authentication: Rails.secrets.mailer_auth
     }
   end
 end
