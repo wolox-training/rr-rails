@@ -21,8 +21,8 @@ module WBooks
       username: Rails.application.secrets.mailer_user,
       password: Rails.application.secrets.mailer_password,
       address: Rails.application.secrets.mailer_address,
-      port: Rails.application.secrets.mailer_port,
-      authentication: Rails.application.secrets.mailer_auth
+      port: Rails.application.secrets.mailer_port.to_i,
+      authentication: Rails.application.secrets.mailer_auth.to_sym
     }
   end
 end
