@@ -52,6 +52,9 @@ gem 'slim'
 # Administration
 gem 'activeadmin'
 
+# API authorization
+gem 'pundit'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
