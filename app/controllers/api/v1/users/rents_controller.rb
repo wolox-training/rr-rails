@@ -3,11 +3,11 @@ module Api
     module Users
       class RentsController < ApiController
         def index
-          render_paginated Rent.where(user_id: params[:user_id])
+          render_paginated policy_scope(Rent).where(user_id: params[:user_id])
         end
 
         def create
-          rent = Rent.create(rent_params)
+          rent = authorize Rent.create(rent_params)
           RentNotificationsJob.perform_later(rent)
           respond_to do |format|
             format.json { render json: rent }
