@@ -49,6 +49,9 @@ gem 'sidekiq'
 # Template engine
 gem 'slim'
 
+# Administration
+gem 'activeadmin'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
