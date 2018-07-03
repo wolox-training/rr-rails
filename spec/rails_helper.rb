@@ -77,8 +77,8 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Helpers
-  config.include Requests::AuthHelpers::Includables, type: :request
-  config.extend Requests::AuthHelpers::Extensions, type: :request
+  config.include Requests::AuthHelpers::Includables
+  config.extend Requests::AuthHelpers::Extensions
 
   # Clean up database
   config.before(:suite) do
