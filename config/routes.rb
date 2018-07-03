@@ -1,6 +1,10 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   # User authentication
   mount_devise_token_auth_for 'User', at: 'auth'
+  # Mount Sidekiq status
+  mount Sidekiq::Web => '/sidekiq'
   # API entries are inside a namespace
   namespace :api do
     # First (and only) version of the API
