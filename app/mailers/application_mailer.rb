@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['no-reply@training.wolox.com.ar']
+  default from: RAILS.application.secrets.mailer_address
   layout 'mailer'
 end
