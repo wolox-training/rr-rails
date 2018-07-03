@@ -1,6 +1,8 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  delegate :admin?, to: :user
+
   def initialize(user, record)
     @user = user
     @record = record
@@ -40,10 +42,6 @@ class ApplicationPolicy
 
   def belongs_to_user?
     record.user_id == user.id
-  end
-
-  def admin?
-    user.admin?
   end
 
   class Scope
