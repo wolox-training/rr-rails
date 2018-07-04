@@ -3,5 +3,5 @@ class BookSuggestion < ApplicationRecord
   validates :title, presence: true
   validates :link, presence: true
 
-  belongs_to :user, optional: true
+  belongs_to :user
 end
