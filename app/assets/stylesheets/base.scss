@@ -1,0 +1,150 @@
+$small-margin: 8px;
+$small-padding: 8px;
+$medium-padding: 16px;
+
+$small-border-radius: 8px;
+
+$application-font-family: sans-serif;
+$application-font-size: 24px;
+
+$primary-regular-bg-color: lightgray;
+$primary-dark-bg-color: darken($primary-regular-bg-color, 20%);
+$primary-light-bg-color: lighten($primary-regular-bg-color, 20%);
+
+$primary-regular-text-color: #333;
+$primary-dark-text-color: darken($primary-regular-text-color, 20%);
+$primary-light-text-color: lighten($primary-regular-text-color, 20%);
+
+$secondary-regular-bg-color: rebeccapurple;
+$secondary-dark-bg-color: darken($secondary-regular-bg-color, 20%);
+$secondary-light-bg-color: lighten($secondary-regular-bg-color, 20%);
+
+$secondary-regular-text-color: #dedede;
+$secondary-dark-text-color: darken($secondary-regular-text-color, 20%);
+$secondary-light-text-color: lighten($secondary-regular-text-color, 20%);
+
+$navigation-title-font-size: 32px;
+$navigation-link-font-size: 24px;
+
+$form-max-width: 900px;
+
+$notice-bg-color: blue;
+$notice-border-color: darkblue;
+$notice-text-color: white;
+
+$danger-bg-color: red;
+$danger-border-color: darkred;
+$danger-text-color: white;
+
+.application {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $primary-regular-bg-color;
+  color: $primary-regular-text-color; 
+  font-family: $application-font-family;
+  font-size: $application-font-size;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .notice, .alert {
+    &>span {
+      margin: $small-margin;
+      padding: $small-padding;
+      display: block;
+      border-radius: $small-border-radius;
+    }
+  }
+
+  .notice>span {
+    border-color: $notice-border-color;
+    background: $notice-bg-color;
+    color: $notice-text-color;
+  }
+
+  .alert>span {
+    border-color: $danger-border-color;
+    background: $danger-bg-color;
+    color: $danger-text-color;
+  }
+
+  .body {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer {
+    margin-top: $small-margin;
+    padding: 0 $small-padding;
+    background: $secondary-regular-bg-color;
+    color: $secondary-regular-text-color;
+  }
+  
+  .navigation {
+    display: flex;
+    padding: 0 $small-padding;
+    margin-bottom: $small-margin;
+    background: $secondary-regular-bg-color;
+    color: $secondary-regular-text-color;
+    align-items: center;    
+    &>.title {
+      flex: 1;
+      color: $secondary-regular-text-color;
+      margin: 0;
+      padding: $small-padding;
+      font-size: $navigation-title-font-size;
+    }
+    &>.links {
+      display: flex;
+      &>a {
+        display: block;
+        padding: $small-padding;
+        text-decoration: none;
+        color: $secondary-dark-text-color;
+        font-size: $navigation-link-font-size; 
+      }
+    }
+  }
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form {
+    max-width: $form-max-width;
+    margin: auto;
+    background: $primary-dark-bg-color;
+    color: $primary-dark-text-color;
+    padding: $medium-padding;
+
+  }
+
+  .form-fields {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: $small-padding;
+  }
+
+  .form-submit {
+    border-radius: 0;
+    padding: $medium-padding;
+    background: $secondary-regular-bg-color;
+    color: $secondary-regular-text-color;
+  }
+
+  .required::after {
+    content: '*';
+    color: $danger-bg-color;
+    font-weight: bold;
+  }
+
+}

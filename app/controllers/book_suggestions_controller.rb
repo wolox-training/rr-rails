@@ -1,7 +1,5 @@
 class BookSuggestionsController < DeviseTokenAuthController
   def new
-  end
-
-  def create
+    @suggestion = BookSuggestion.new
   end
 end
