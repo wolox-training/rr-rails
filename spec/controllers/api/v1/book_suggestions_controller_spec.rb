@@ -3,8 +3,7 @@ require 'rails_helper'
 describe Api::V1::BookSuggestionsController do
   describe 'POST #index', type: :request do
     subject :make_suggestion do
-      params = { book_suggestion: new_suggestion_attributes }
-      post api_v1_book_suggestions_path, params: params
+      post api_v1_book_suggestions_path, params: { book_suggestion: new_suggestion_attributes }
     end
 
     let(:new_suggestion_attributes) { attributes_for(:book_suggestion) }
