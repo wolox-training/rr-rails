@@ -14,6 +14,7 @@ require 'support/factory_bot'
 # FactoryBot is not loading it for a strange reason
 require 'factories/user_factory'
 require 'factories/book_factory'
+require 'factories/book_suggestion_factory'
 
 # Helpers
 require 'support/auth_helpers'
