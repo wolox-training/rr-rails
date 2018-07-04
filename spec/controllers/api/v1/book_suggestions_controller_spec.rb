@@ -42,7 +42,7 @@ describe Api::V1::BookSuggestionsController do
       end
 
       it 'responds with 422 status' do
-        expect(suggestion).to have_http_status(422)
+        expect(suggestion).to have_http_status(:unprocessable_entity)
       end
     end
   end
