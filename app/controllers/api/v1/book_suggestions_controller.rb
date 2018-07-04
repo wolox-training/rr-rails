@@ -8,7 +8,7 @@ module Api
             format.json { render status: 201, json: suggestion }
           else
             format.json do
-              render status: 400, json: { ok: false, errors: suggestion.errors.full_messages }
+              render status: 422, json: { ok: false, errors: suggestion.errors.full_messages }
             end
           end
         end
