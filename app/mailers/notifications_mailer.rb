@@ -3,9 +3,6 @@ class NotificationsMailer < ApplicationMailer
     @rent = rent
     @user = rent.user
     @book = rent.book
-    mail(to: @user.email, subject: 'New rent notification from WBooks') do |config|
-      config.html
-      config.text
-    end
+    mail(to: @user.email, subject: 'New rent notification from WBooks', &:html)
   end
 end
