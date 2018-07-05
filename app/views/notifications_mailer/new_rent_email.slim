@@ -33,20 +33,20 @@ html
         }      
   body
     header
-      h1 | WBooks
-      p | This is a rent notification from WBooks.
-      p | A new rent was registered for the following book
+      h1 = I18n.t 'app.title'
+      p = I18n.t 'mail.notifications.rent.first'
+      p = I18n.t 'mail.notifications.rent.second'
     section
       content
         div class='book-card'
-          img src="#{@book.image}"  alt="Cover for #{@book.title}"
+          img src="#{@book.image}"  alt="#{I18n.t 'mail.notifications.rent.img.alt', title: @book.title}"
           div class='center'
             h2 = @book.title
             p = @book.author
             p = @book.genre
-            p | Published by #{@book.publisher} in #{@book.year}.
-        p | The rent was registered at #{@rent.created_at.strftime('%m/%d/%Y %H:%M')}
-        p | The rent starts from #{@rent.from.strftime('%m/%d/%Y')} until #{@rent.to.strftime('%m/%d/%Y')}.
-        p | Thanks for using WBooks. Enjoy your reading!
+            p = I18n.t 'mail.notifications.rent.published',  publisher: @book.publisher, year: @book.year
+        p = I18n.t 'mail.notifications.rent.registered', date: I18n.l(@rent.created_at)
+        p = I18n.t 'mail.notifications.rent.period', from: I18n.l(@rent.from), to: I18n.l(@rent.to)
+        p = I18n.t 'mail.notifications.rent.thanks'
     footer
-      p | Please, do not reply this email.
+      p = I18n.t 'mail.notifications.rent.no_reply'
