@@ -49,14 +49,6 @@ gem 'sidekiq'
 # Template engine
 gem 'slim'
 
-<<<<<<< 3f72f52e3b1efc7af30435375eacb11cf645d2f8
-=======
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
-
->>>>>>> added sidekiq_mailer gem instead of writting 200 lines of code
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
