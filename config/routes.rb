@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Google callback for devise
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, singular: 'oauth', controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # User authentication
   mount_devise_token_auth_for 'User', at: 'auth'
   # Mount Sidekiq status
@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   # Outside of the api, there is a visual form for BookSuggestions
   resources :book_suggestions, only: %I[new]
   # Google auth test endpoint
-  get '/google', to: 'google#index'
+  get '/google', to: 'google_page#index'
+  get '/google/login', to: 'google_page#login'
 end
