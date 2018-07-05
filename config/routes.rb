@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   end
   # Outside of the api, there is a visual form for BookSuggestions
   resources :book_suggestions, only: %I[new]
+  # Resource routes for search
+  resources :search, only: %I[index]
   # Google auth test endpoint
   get '/google', to: 'google_page#index'
   get '/google/login', to: 'google_page#login'
