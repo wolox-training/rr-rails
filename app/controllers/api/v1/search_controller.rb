@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SearchController < ApiController
+    class SearchController < ApplicationController
       def index
         service = OpenLibraryService.new
         result = service.book_info search_params['isbn']
