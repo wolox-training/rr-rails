@@ -9,7 +9,7 @@ module Api
 
         def create
           rent = Rent.create(rent_params)
-          RentNotificationsJob.perform_later(rent)
+          NotificationsMailer.new_rent_email(rent).deliver_later
           respond_to do |format|
             format.json { render json: rent }
           end
