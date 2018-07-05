@@ -60,6 +60,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Google Open Auth gem 
 gem 'omniauth-google-oauth2'
 
+# Easier HTTP requests
+gem 'httparty'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
