@@ -4,11 +4,12 @@ class OpenLibraryService
   base_uri 'openlibrary.org/api'
 
   def book_info(isbn)
-    map_book_response(
-      isbn,
-      self.class.get('/books', book_info_options(isbn)).parsed_response
-    )
+    options = book_info_options(isbn)
+    response = self.class.get('/books', options).parsed_response
+    map_book_response isbn, response
   end
+
+  private
 
   def map_book_response(isbn, data)
     book_data = data["ISBN:#{isbn}"]
