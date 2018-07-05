@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def self.from_omniauth(access_token)
     data = access_token.info
-    User.where(email: data['email']).first || create_omniauth_user(data)
+    User.find_by(email: data['email']) || create_omniauth_user(data)
   end
 
   def self.create_omniauth_user(data)
