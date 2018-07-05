@@ -37,6 +37,9 @@ gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth'
 
+# Required for testing serializers
+gem "active_model_serializers", require: true
+
 # User pagination
 gem 'wor-paginate'
 
