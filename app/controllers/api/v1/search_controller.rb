@@ -2,7 +2,7 @@ module Api
   module V1
     class SearchController < ApplicationController
       def index
-        result = find_book
+        result = OpenLibraryService.new.book_info search_params['isbn']
         respond_to do |format|
           if result
             format.json { render json: result }
@@ -12,13 +12,6 @@ module Api
             end
           end
         end
-      end
-
-      protected
-
-      def find_book
-        service = OpenLibraryService.new
-        service.book_info search_params['isbn']
       end
 
       def search_params
