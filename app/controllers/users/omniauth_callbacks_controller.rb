@@ -18,7 +18,9 @@ module Users
 
     def reject_google_oauth2
       session['devise.google_data'] = request.env['omniauth.auth'].except(:extra)
-      redirect_to action: 'login', controller: 'google_page', alert: @user.errors.full_messages.join("\n")
+      redirect_to action: 'login',
+                  controller: 'google_page',
+                  alert: @user.errors.full_messages.join("\n")
     end
   end
 end
