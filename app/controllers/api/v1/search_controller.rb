@@ -10,7 +10,7 @@ module Api
       end
 
       def search_params
-        params.require(:search).permit(:isbn)
+        params.require(:query).permit(:isbn)
       end
     end
   end
