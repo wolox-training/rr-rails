@@ -24,7 +24,7 @@ module Api
       end
 
       def on_invalid_record(exception)
-        render status: :not_created, json: { ok: false, error: exception.message }
+        render status: :unprocessable_entity, json: { ok: false, error: exception.message }
       end
     end
   end
