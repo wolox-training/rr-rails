@@ -35,6 +35,7 @@ en:
   mail:
     notifications:
       rent:
+        subject: New rent notification from WBooks.
         first: This is a rent notification from WBooks.
         second: A new rent was registered for the following book
         img:
