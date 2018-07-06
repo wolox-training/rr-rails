@@ -6,15 +6,9 @@ module Api
       end
 
       def show
-        # Not a strong parameter, because :id is part of the API URL
+        book = Book.find(params[:id])
         respond_to do |format|
-          if Book.exists? params[:id]
-            format.json { render json: Book.find(params[:id]) }
-          else
-            format.json do
-              render status: 404, json: { error: "No book was found with id #{params[:id]}." }
-            end
-          end
+          format.json { render json: book }
         end
       end
     end
