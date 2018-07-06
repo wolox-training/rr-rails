@@ -4,6 +4,7 @@ en:
   mail:
     notifications:
       rent:
+        subject: Nueva notificación de alquiler de WBooks.      
         first: Esta es una notificación de WBooks.
         second: Un nuevo alquiler ha sido registrado para el siguiente libro
         img:
