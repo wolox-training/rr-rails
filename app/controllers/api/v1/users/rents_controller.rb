@@ -8,7 +8,7 @@ module Api
         end
 
         def create
-          rent = Rent.create(rent_params)
+          rent = Rent.create!(rent_params)
           respond_to do |format|
             format.json { render json: rent }
           end
