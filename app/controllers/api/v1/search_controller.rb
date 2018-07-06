@@ -14,6 +14,13 @@ module Api
         end
       end
 
+      protected
+
+      def find_book
+        service = OpenLibraryService.new
+        service.book_info search_params['isbn']
+      end
+
       def search_params
         params.require(:query).permit(:isbn)
       end
