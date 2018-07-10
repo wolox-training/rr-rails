@@ -1,0 +1,25 @@
+.form-container
+  = form_with model: @suggestion, :url => api_v1_book_suggestions_path, html: { class: 'form', id: 'new_book_suggestion' } do |form|
+    fieldset
+      legend
+        | Make a book suggestion
+      .form-fields
+        = form.label :author, class: 'required'
+        = form.text_field :author
+        = form.label :title, class: 'required'
+        = form.text_field :title
+        = form.label :link, class: 'required'
+        = form.text_field :link
+        = form.label :publisher
+        = form.text_field :publisher
+        = form.label :year
+        = form.text_field :year
+        = form.label :editorial
+        = form.text_field :editorial
+        = form.label :price
+        = form.text_field :price
+    hr
+    span.required
+    | &nbsp; Required fields
+    .actions
+      = form.submit class: 'form-submit'

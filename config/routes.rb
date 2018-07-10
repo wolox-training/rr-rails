@@ -20,4 +20,6 @@ Rails.application.routes.draw do
       resources :book_suggestions, only: %I[create]
     end
   end
+  # Outside of the api, there is a visual form for BookSuggestions
+  resources :book_suggestions, only: %I[new]
 end
