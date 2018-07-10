@@ -10,4 +10,8 @@ class User < ApplicationRecord
          :confirmable, :omniauthable
 
   has_many :rents, dependent: :destroy
+
+  def admin?
+    false
+  end
 end

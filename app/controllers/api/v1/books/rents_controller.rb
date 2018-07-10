@@ -3,7 +3,7 @@ module Api
     module Books
       class RentsController < ApiController
         def index
-          results = Rent.includes(:user, :book).where(book_id: params[:book_id])
+          results = policy_scope(Rent).includes(:user, :book).where(book_id: params[:book_id])
           render_paginated results
         end
       end
