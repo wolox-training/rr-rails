@@ -2,6 +2,7 @@ module Api
   module V1
     class BookSuggestionsController < DeviseTokenAuthController
       rescue_from ActiveRecord::RecordInvalid, with: :on_invalid_record
+      rescue_from ActionController::ParameterMissing, with: :on_invalid_record
 
       def create
         suggestion = BookSuggestion.create! book_suggestion_params
