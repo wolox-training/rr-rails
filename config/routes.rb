@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :users do
         resources :rents, controller: 'users/rents', only: %I[index create]
       end
+      resources :search, only: %I[index]
       resources :book_suggestions, only: %I[create]
     end
   end
