@@ -1,0 +1,13 @@
+= form_with scope: 'query', :url => api_v1_search_index_path, method: :get, html: { class: 'form', id: 'new_search' } do |form|
+  fieldset
+    legend
+      | Search for a book
+    .form-fields
+      = form.label :isbn, 'ISBN', class: 'required'
+      = form.text_field :isbn
+  hr
+  span.required
+  | &nbsp; Required fields
+  .actions
+    = form.submit 'Search', class: 'form-submit'
+p#result
