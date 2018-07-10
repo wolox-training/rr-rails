@@ -10,6 +10,8 @@ class User < ApplicationRecord
          :confirmable, :omniauthable
 
   has_many :rents, dependent: :destroy
+  # A book suggestion can be made without an user, so dependent is nullify
+  has_many :book_suggestions, dependent: :nullify
 
   def admin?
     false
