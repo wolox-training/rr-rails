@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :locale, presence: true
   # Include default devise modules.
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :rents, dependent: :destroy
