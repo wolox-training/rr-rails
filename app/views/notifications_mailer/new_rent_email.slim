@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    meta charset='UTF-8'
+    style 
+      |
+        html, body { 
+          font-family: sans-serif; 
+          min-height: 100%;
+          background: rebeccapurple; 
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          text-align: center;
+        }
+        .book-card {
+          color: black;
+          padding: 0.5em;
+          margin: 0.5em;
+          border-radius: 0.3em;
+          background: white;
+          box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+        .book-card > img {
+          width: 100%;
+          max-width: 10em;
+          margin: auto;
+        }
+        footer {
+          margin-top: 1em;
+        }      
+  body
+    header
+      h1 | WBooks
+      p | This is a rent notification from WBooks.
+      p | A new rent was registered for the following book
+    section
+      content
+        div class='book-card'
+          img src="#{@book.image}"  alt="Cover for #{@book.title}"
+          div class='center'
+            h2 = @book.title
+            p = @book.author
+            p = @book.genre
+            p | Published by #{@book.publisher} in #{@book.year}.
+        p | The rent was registered at #{@rent.created_at.strftime('%m/%d/%Y %H:%M')}
+        p | The rent starts from #{@rent.from.strftime('%m/%d/%Y')} until #{@rent.to.strftime('%m/%d/%Y')}.
+        p | Thanks for using WBooks. Enjoy your reading!
+    footer
+      p | Please, do not reply this email.

@@ -9,6 +9,7 @@ module Api
 
         def create
           rent = Rent.create!(rent_params)
+          RentNotificationsJob.perform_later(rent.id)
           respond_to do |format|
             format.json { render json: rent }
           end
