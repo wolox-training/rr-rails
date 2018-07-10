@@ -6,9 +6,10 @@ module Api
       end
 
       def show
-        # Not a strong parameter, because :id is part of the API URL
-        @book = Book.find(params[:id])
-        render json: @book
+        book = Book.find(params[:id])
+        respond_to do |format|
+          format.json { render json: book }
+        end
       end
     end
   end

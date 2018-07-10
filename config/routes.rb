@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   # API entries are inside a namespace
   namespace :api do
     # First (and only) version of the API
-    namespace :v1 do
-      resources :books, only: %I[index show]
+    namespace :v1, defaults: { format: 'json' } do
+      resources :books, only: %I[index show] do
+        resources :rents, controller: 'books/rents', only: %I[index]
+      end
+      resources :users do
+        resources :rents, controller: 'users/rents', only: %I[index create]
+      end
     end
   end
 end
