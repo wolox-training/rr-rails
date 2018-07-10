@@ -1,0 +1,5 @@
+p
+  | Hello #{@user.first_name} #{@user.last_name}!
+p
+  | Your email is #{@user.email}
+= link_to "Close my session", "#{destroy_oauth_session_path}", method: :delete

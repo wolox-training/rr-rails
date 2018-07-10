@@ -105,14 +105,14 @@ $danger-text-color: #fff;
     }
   }
 
-  >.links {
+  .links {
     display: flex;
 
     >a {
       color: $secondary-dark-text-color;
       display: block;
       font-size: $navigation-link-font-size;
-      padding: $small-padding;
+      padding: $medium-padding;
       text-decoration: none;
     }
   }
