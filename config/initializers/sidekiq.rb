@@ -1,6 +1,7 @@
 redis_config = {
   url: Rails.application.secrets.redis_url,
-  password: Rails.application.secrets.redis_password
+  password: Rails.application.secrets.redis_password,
+  namespace: Rails.application.secrets.redis_namespace
 }
 
 Sidekiq.configure_server do |config|
