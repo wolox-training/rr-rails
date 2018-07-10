@@ -11,7 +11,7 @@ module Api
       end
 
       def book_suggestion_params
-        result = params.fetch(:book_suggestion, {}).permit(
+        result = params.require(:book_suggestion).permit(
           :author,
           :title,
           :link,
