@@ -1,0 +1,16 @@
+en:
+  app:
+    title: WBooks
+  mail:
+    notifications:
+      rent:
+        subject: Nueva notificación de alquiler de WBooks.      
+        first: Esta es una notificación de WBooks.
+        second: Un nuevo alquiler ha sido registrado para el siguiente libro
+        img:
+          alt: Tapa de %{title}
+        published: Publicado por %{publisher} en %{year}
+        registered: El alquiler fue registrado el %{date}
+        period: El alquiler comienza el %{from} hasta el %{to}
+        thanks: ¡Gracias por utilizar WBooks!
+        no_reply: Por favor, no responda a este email.

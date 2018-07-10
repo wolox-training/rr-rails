@@ -30,4 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app:
+    title: WBooks
+  mail:
+    notifications:
+      rent:
+        subject: New rent notification from WBooks.
+        first: This is a rent notification from WBooks.
+        second: A new rent was registered for the following book
+        img:
+          alt: Cover for %{title}
+        published: Published by %{publisher} in %{year}
+        registered: The rent was registered at %{date}
+        period: The rent will begin on %{from} upto %{to}
+        thanks: Thanks for using WBooks!
+        no_reply: Please, do not reply to this email.
