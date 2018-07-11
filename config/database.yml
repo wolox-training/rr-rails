@@ -87,3 +87,4 @@ production:
   database: training-app_production
   username: training-app
   password: <%= ENV['TRAINING-APP_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
